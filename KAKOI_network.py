@@ -25,6 +25,7 @@ class mk_KAKOI_netowrk:
     # 以下はネットワークの特徴量の出力
     def output_average_shortest_path_length(self):  #（最大クラスタ）平均距離
         new_network = self.network  # 最大クラスタのネットワークの作成
+        # 今回、部分ネットワークが2つ以上できる囲いはなかったので、次数が0のノードを除く という操作を行う。
         remove_nodes = [nodes for nodes in self.network if self.network.degree(nodes) == 0]
         new_network.remove_nodes_from(remove_nodes)
         print(nx.average_shortest_path_length(new_network))
