@@ -17,7 +17,6 @@ class mk_KAKOI_netowrk:
     def output_network(self):
         plt.figure(figsize=(8,6))
         nx.draw(self.network, self.pos, with_labels=True, node_color = "burlywood", node_size = 2000, width=5, font_size=20, font_weight="bold", font_family="Yu Gothic")
-        # plt.savefig("output.eps")
         plt.subplots_adjust(left=0.4, right=0.6, bottom=0.4, top=0.6)
         plt.show()
 
@@ -48,7 +47,20 @@ class mk_KAKOI_netowrk:
         print(nx.degree_assortativity_coefficient(self.network))
         
         
-        
+
+#   ９ ８ ７ ６ ５ ４ ３ ２ １
+# +---------------------------+
+# | ・ ・ ・ ・ ・ ・ ・ ・ ・|一
+# | ・ ・ ・ ・ ・ ・ ・ ・ ・|二
+# | ・ ・ ・ ・ ・ ・ ・ ・ ・|三
+# | ・ ・ ・ ・ ・ ・ ・ ・ ・|四
+# | ・ ・ ・ ・ ・ ・ ・ ・ ・|五
+# | ・ ・ ・ ・ ・ ・ ・ ・ 歩|六
+# | ・ ・ ・ ・ 歩 歩 歩 歩 ・|七
+# | ・ ・ ・ ・ 金 ・ 銀 玉 ・|八
+# | ・ ・ ・ ・ ・ 金 ・ 桂 香|九
+# +---------------------------+
+# 上の美濃囲いを参考に、ノード（駒の種類）、エッジ（駒の利き）、ポジション（駒の位置）を入力する
 mino_kakoi = mk_KAKOI_netowrk(['歩', '歩2', '歩3', '歩4', '歩5', '金', '銀', '玉', '金2', '桂', '香'],
                               [('香', '歩'), ('金', '歩2'), ('金', '歩3'), ('銀', '歩3'), ('銀', '歩4'), ('玉', '歩4'), 
                                ('桂', '歩4'), ('銀', '歩5'), ('玉', '歩5'), ('金2', '金'), ('玉', '銀'), ('金2', '銀'), 
