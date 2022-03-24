@@ -16,6 +16,7 @@ class mk_KAKOI_netowrk:
     # ネットワークの描画
     def output_network(self):
         plt.figure(figsize=(8,6))
+        # nx.draw(G)でネットワークGを出力する。引数は右を参照：https://networkx.org/documentation/stable/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html
         nx.draw(self.network, self.pos, with_labels=True, node_color = "burlywood", node_size = 2000, width=5, font_size=20, font_weight="bold", font_family="Yu Gothic")
         plt.subplots_adjust(left=0.4, right=0.6, bottom=0.4, top=0.6)
         plt.show()
@@ -60,7 +61,7 @@ class mk_KAKOI_netowrk:
 # | ・ ・ ・ ・ 金 ・ 銀 玉 ・|八
 # | ・ ・ ・ ・ ・ 金 ・ 桂 香|九
 # +---------------------------+
-# 上の美濃囲いを参考に、ノード（駒の種類）、エッジ（駒の利き）、ポジション（駒の位置）を入力する
+# 上の美濃囲いの例を参考に、ノード（駒の種類）、エッジ（駒の利き）、ポジション（駒の位置）を入力する
 mino_kakoi = mk_KAKOI_netowrk(['歩', '歩2', '歩3', '歩4', '歩5', '金', '銀', '玉', '金2', '桂', '香'],
                               [('香', '歩'), ('金', '歩2'), ('金', '歩3'), ('銀', '歩3'), ('銀', '歩4'), ('玉', '歩4'), 
                                ('桂', '歩4'), ('銀', '歩5'), ('玉', '歩5'), ('金2', '金'), ('玉', '銀'), ('金2', '銀'), 
