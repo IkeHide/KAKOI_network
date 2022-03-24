@@ -33,7 +33,7 @@ class mk_KAKOI_netowrk:
     def output_average_degree(self):  # 平均次数
         # networkxで直接出力する関数がないので自作する。
         # nx.degree(G)[node]でネットワークGにおけるあるnodeの次数を取得できるので、各ノードの次数をリストに格納し その平均を得る。
-        print(np.average(nx.degree(self.network)[node] for node in self.nodes))
+        print(np.average([nx.degree(self.network)[node] for node in self.nodes])
 
     def output_average_clustering(self):  # 平均クラスタ係数
         print(nx.average_clustering(self.network))
