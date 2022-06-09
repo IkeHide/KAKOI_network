@@ -56,13 +56,12 @@ class mk_KAKOI_netowrk:
         return len(max_cluster)  
 
     def output_robustness(self):  # 頑健性を出力
-        import copy
         new_network = copy.deepcopy(self.network)         # ネットワークのコピー
         target_piece = '金'          # 狙われやすい駒の設定
         new_network.remove_node(target_piece)  # ノードの削除
         self.output_network(new_network)
 
-        if nx.is_connected(new_network):
+        if nx.is_connected(self.network) and nx.is_connected(new_network): 
             G1_diam = nx.diameter(self.network)
             G2_diam = nx.diameter(new_network)
             print('直径の変化率：{}[%]'.format((G2_diam-G1_diam)/G1_diam*100))
